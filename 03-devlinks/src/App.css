@@ -14,7 +14,14 @@
     background-repeat: no-repeat;
     background-position: top center;
     background-size: cover;
-    color: var(--text-color)
+    
+    color: var(--text-color);
+    font-family: "Inter", sans-serif;
+
+    flex-direction: column;
+    justify-content: center;
+    display: flex;
+    gap: 60px;
 }
 
 ul {
@@ -24,3 +31,15 @@ ul {
     gap: 16px;
     padding: 24px;
 }
+
+#RedesSociais {
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    & {
+        color: var(--text-color);
+        font-size: xx-large;        
+    }
+    }

@@ -8,10 +8,11 @@ li a{
     border-width: 1px;
     border-radius: 8px;
     border-color: var(--stroke-color);
-    background-image: var(--surface-color);
+    background-color: var(--surface-color);
 
     text-decoration: none;
     font-weight: bold;
+    color: var(--text-color);
  }
 
     li a:hover{

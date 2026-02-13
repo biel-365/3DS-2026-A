@@ -1,10 +1,11 @@
 import React, { Children } from 'react'
+import "./Footer.module.css"
 
 const Footer = ({children}) => {
   return (
     <footer>
       <p>
-        Feito com amor por <a href='https://github.com'>{children}</a>
+        Feito com 💖 por <a href='https://github.com'>{children}</a>
       </p>
     </footer>
   )

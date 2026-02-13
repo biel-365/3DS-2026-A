@@ -3,6 +3,7 @@ import Botoes from './components/Botoes/Botoes'
 import Footer from './components/Footer/Footer'
 import Perfil from './components/Perfil/Perfil'
 import RedesSociais from './components/RedesSociais/RedesSociais'
+import Switch from './components/Switch/Switch'
 
 function App() {
 
@@ -11,9 +12,8 @@ function App() {
 
     <Perfil fotoPerfil={"https://placehold.co/200"}>Gabriel Lopes Aroio</Perfil>
 
-    <div className='switch'>
-      Botão Switch
-    </div>
+   <Switch />
+   
 
     <ul>
      <Botoes url={""}>Inscreva-se</Botoes>
@@ -22,10 +22,13 @@ function App() {
      <Botoes url={""}>Saiba Mais do curso DEV</Botoes> 
     </ul>
 
-    <RedesSociais url={"https://github.com"} icon={"logo-github"}></RedesSociais>
-    <RedesSociais url={"https://youtube.com"} icon={"logo-youtube"}></RedesSociais>
-    <RedesSociais url={"https://br.linkedin.com/"} icon={"logo-linkedin"}></RedesSociais>
-    <RedesSociais url={"https://instagram.com"} icon={"logo-instagram"}></RedesSociais>
+    <div id="RedesSociais">
+      <RedesSociais url={"https://github.com"} icon={"logo-github"}></RedesSociais>
+      <RedesSociais url={"https://youtube.com"} icon={"logo-youtube"}></RedesSociais>
+      <RedesSociais url={"https://br.linkedin.com/"} icon={"logo-linkedin"}></RedesSociais>
+      <RedesSociais url={"https://instagram.com"} icon={"logo-instagram"}></RedesSociais>
+    </div>
+    
 
     <Footer> Gabriel Lopes Aroio </Footer>
     </div>
