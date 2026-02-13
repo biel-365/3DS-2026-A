@@ -1,0 +1,20 @@
+li a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 24px;
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 8px;
+    border-color: var(--stroke-color);
+    background-image: var(--surface-color);
+
+    text-decoration: none;
+    font-weight: bold;
+ }
+
+    li a:hover{
+        background-color: var(--surface-color-hover);
+        border-color: var(--text-color);
+    } 

@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from "./Botoes.module.css"
 
 const Botoes = ({url, children}) => {
   return (
