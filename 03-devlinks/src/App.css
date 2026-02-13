@@ -1,4 +1,14 @@
 :root{
+    --bg-url: url(assets/bg-desktop.jpg);
+    --text-color: #ffffff;
+    --stroke-color: rgba(255, 255, 255, 0.5);
+    --surface-color: rgba(255, 255, 255, 0.1);
+    --surface-color-hover: rgba(255, 255, 255, 0.4);
+    --switch-bg-url: url(assets/MoonStars.svg);
+    --highlight-color: rgba(255, 255, 255, 0.2);
+}
+
+.light{
     --bg-url: url(assets/bg-desktop-light.jpg);
     --text-color: #000;
     --stroke-color: rgba(0,0,0,0.5);
@@ -22,6 +32,8 @@
     justify-content: center;
     display: flex;
     gap: 60px;
+
+    transition: background 0.2s;
 }
 
 ul {
@@ -38,8 +50,23 @@ ul {
         justify-content: center;
         align-items: center;
         gap: 30px;
-    & {
+    & a{
         color: var(--text-color);
         font-size: xx-large;        
     }
+}
+
+#Botoes {
+    display: flex;
+    justify-content: center;
+
+    & ul{
+        width: 100%;
+        max-width: 588px;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px;
     }
+}

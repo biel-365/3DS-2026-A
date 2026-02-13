@@ -23,8 +23,25 @@
     }
 
     & button:hover{
-        outline: 8px solid var(--stroke-color);
+        outline: 2px solid var(--stroke-color);
     }
+
+    & span {
+        display: block;
+        width: 64px;
+        height: 24px;
+        background-color: var(--stroke-color);
+        border: 1px solid var(--stroke-color);
+        border-radius: 999px;
+
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+
+    }
+}
+
+.light #Switch button {
+    animation: slide-in 0.2s forwards;
 }
 
 
@@ -35,15 +52,15 @@
         left: 0;
       }
     to {
-        left: 50%;
+        left: 55%;
     }
 }
 
 @keyframes slide-out {
     from{
-        left: 0;
+        left: 50%;
       }
     to {
-        left: 50%;
+        left: 0;
     }
 }
