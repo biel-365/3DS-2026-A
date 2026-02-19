@@ -1,11 +1,11 @@
 import React, { Children } from "react";
 import "./Footer.module.css";
 
-const Footer = ({ children }) => {
+const Footer = ({ children, link }) => {
   return (
     <footer>
       <p>
-        Feito com 💖 por <a href="https://github.com">{children}</a>
+        Feito com 💖 por <a href={link} target= "_blank" >{children}</a>
       </p>
     </footer>
   );

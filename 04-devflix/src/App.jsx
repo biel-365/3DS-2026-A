@@ -16,14 +16,11 @@ const App = () => {
         <input
           type="text"
           placeholder="Insira o nome de um filme ou uma série..."
-          img
-          role="button"
-          src={lupa}
-          alt="botão de ação para pesquisa!"
         />
+        <img src={lupa} alt="botão de ação para pesquisa!"></img>
       </div>
 
-      <Footer>Gabriel Lopes Aroio</Footer>
+      <Footer link={"https://github.com/biel-365"}>Gabriel Lopes Aroio</Footer>
     </div>
   );
 };
