@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer'
 import Perfil from './components/Perfil/Perfil'
 import RedesSociais from './components/RedesSociais/RedesSociais'
 import Switch from './components/Switch/Switch'
+import accelerator from "./assets/CJtnHVR5.jpg";
 
 function App() {
 
@@ -18,17 +19,17 @@ function App() {
 
     <div id='App' className={IsLight ? "light" : ""}>
 
-    <Perfil fotoPerfil={"https://placehold.co/200"}>Gabriel Lopes Aroio</Perfil>
+    <Perfil fotoPerfil={accelerator}>Gabriel Lopes Aroio</Perfil>
 
 
    <Switch troca={troca} isLight={IsLight} />
 
     <div id="Botoes">
     <ul>
-     <Botoes url={""}>Inscreva-se</Botoes>
-     <Botoes url={""}>Minha Playlist</Botoes>
-     <Botoes url={""}>Me Pague um Café!</Botoes>
-     <Botoes url={""}>Saiba Mais do curso DEV</Botoes> 
+     <Botoes url={"https://www.youtube.com/@Biel_365"}>Inscreva-se</Botoes>
+     <Botoes url={"https://www.roblox.com/pt/users/866990816/profile"}>Roblox</Botoes>
+     <Botoes url={"https://chatgpt.com/"}>Chat GPT</Botoes>
+     <Botoes url={"https://discord.com/"}>Discord</Botoes> 
     </ul>
     </div>
 
