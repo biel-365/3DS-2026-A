@@ -1,0 +1,47 @@
+.movie{
+width: 310px;
+height: 460px;
+margin: 1.5rem;
+position: relative;
+overflow: hidden;
+border: none;
+box-shadow: 0px 13px 10px -7px var(--shadow-color);
+border-radius: 10px;
+
+transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1,275);
+
+/* Animação ao passar o mouse nos filmes */
+
+&:hover {
+    box-shadow: 0 30px 18px -8px rgba(0, 0, 0, 0.4);
+    transform: scale(1.05);
+}
+
+
+/* Modificando o primeiro item div que existe no movie (ano) */
+& div:nth-of-type(1){
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    top: 0;
+    color: var(--text-secondary);
+    font-weight: bold;
+    text-align: center;
+    transition: opacity 0.3s ease;
+    padding: 16px;
+
+    opacity: 0;
+}
+
+/* Modificando o segundo item div que existe no movie (imagem) */
+& div:nth-of-type(2) {
+    height: 100%;
+    width: 100%;
+
+    & img{
+    height: 100%;
+    width: 100%;
+    }
+}
+
+}
