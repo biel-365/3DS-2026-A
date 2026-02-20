@@ -9,6 +9,7 @@ import MovieCard from "./components/MovieCard/MovieCard";
 
 const App = () => {
   const [movies, setMovies] = useState([]);
+  const [search, setSearch] = useState("");
 
   //Utilizando uma CHAVE de API do arquivo .env
   const apiKey = import.meta.env.VITE_OMDB_API_KEY;
@@ -24,7 +25,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    searchMovies("Batman");
+    searchMovies("Avengers"); // a pesquisa real do site dos filmes e séries
   }, []);
 
   return (
@@ -36,8 +37,8 @@ const App = () => {
       />
 
       <div className="search">
-        <input type="text" placeholder="Pesquise por filmes" />
-        <img src={lupa} alt="Botão de ação para pesquisa!" />
+        <input onKeyDown={(pesquisou) => pesquisou.key === "Enter" && searchMovies(search)} onChange={(pesquisou) => setSearch(pesquisou.target.value) } type="text" placeholder="Pesquise por um filme ou série..." />
+        <img onClick={() => searchMovies(search)} src={lupa} alt="Botão de ação para pesquisa!" />
       </div>
 
       {movies?.length > 0 ? (
@@ -47,7 +48,7 @@ const App = () => {
           ))}
         </div>
       ) : (
-        <h2>😡 Puxa vida... Cadê o filme??? 💔</h2>
+        <h2 className="empty">😡 Puxa vida... Cadê o filme??? 💔</h2>
       )}
 
       <Footer link={"https://github.com/biel-365"}>Gabriel Lopes Aroio</Footer>
