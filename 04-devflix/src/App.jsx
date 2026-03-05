@@ -25,7 +25,9 @@ const App = () => {
   };
 
   useEffect(() => {
-    searchMovies("Avengers"); // a pesquisa real do site dos filmes e séries
+    (async () => {
+      await searchMovies("Avengers"); // a pesquisa real do site dos filmes e séries
+    })();
   }, []);
 
   return (
@@ -37,14 +39,25 @@ const App = () => {
       />
 
       <div className="search">
-        <input onKeyDown={(pesquisou) => pesquisou.key === "Enter" && searchMovies(search)} onChange={(pesquisou) => setSearch(pesquisou.target.value) } type="text" placeholder="Pesquise por um filme ou série..." />
-        <img onClick={() => searchMovies(search)} src={lupa} alt="Botão de ação para pesquisa!" />
+        <input
+          onKeyDown={(pesquisou) =>
+            pesquisou.key === "Enter" && searchMovies(search)
+          }
+          onChange={(pesquisou) => setSearch(pesquisou.target.value)}
+          type="text"
+          placeholder="Pesquise por um filme ou série..."
+        />
+        <img
+          onClick={() => searchMovies(search)}
+          src={lupa}
+          alt="Botão de ação para pesquisa!"
+        />
       </div>
 
       {movies?.length > 0 ? (
         <div className="container">
           {movies.map((movie, index) => (
-            <MovieCard key={index} {...movie} />
+            <MovieCard key={index} apiUrl={apiUrl} {...movie} />
           ))}
         </div>
       ) : (
