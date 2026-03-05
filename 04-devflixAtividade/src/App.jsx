@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-import logo from "./assets/devflix.png";
+import logo from "./assets/Design_sem_nome-removebg-preview.png";
 import lupa from "./assets/search.svg";
 
 import Footer from "./components/Footer/Footer";
