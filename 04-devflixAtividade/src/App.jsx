@@ -1,7 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-import logo from "./assets/Design_sem_nome-removebg-preview.png";
+import solzinho from "./assets/solzinho.png";
+import luazinha from "./assets/luazinha.png";
+
+import logo from "./assets/Bielflix certo.png";
 import lupa from "./assets/search.svg";
 
 import Footer from "./components/Footer/Footer";
@@ -10,7 +13,7 @@ import MovieCard from "./components/MovieCard/MovieCard";
 const App = () => {
   const [movies, setMovies] = useState([]);
   const [search, setSearch] = useState("");
-
+  const [theme, setTheme] = useState("light");
   //Utilizando uma CHAVE de API do arquivo .env
   const apiKey = import.meta.env.VITE_OMDB_API_KEY;
   const apiUrl = `https://omdbapi.com/?apikey=${apiKey}`;
@@ -30,8 +33,31 @@ const App = () => {
     })();
   }, []);
 
+  useEffect(() => {
+  document.documentElement.setAttribute("data-theme", theme);
+}, [theme]);
+
+const toggleTheme = () => {
+  setTheme(theme === "light" ? "dark" : "light");
+};
+
   return (
     <div id="App">
+    
+    <div className="top-gradient"></div>
+
+   <div className="theme-toggle" onClick={toggleTheme}>
+  <div className={`toggle-track ${theme}`}>
+    <div className="toggle-thumb">
+      <img
+        src={theme === "light" ? solzinho : luazinha}
+        alt="Tema"
+        className="theme-icon"
+      />
+    </div>
+  </div>
+</div>
+
       <img
         id="Logo"
         src={logo}

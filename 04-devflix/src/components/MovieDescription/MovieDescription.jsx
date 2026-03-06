@@ -2,14 +2,71 @@ import { useEffect, useState } from "react";
 import styles from "./MovieDescription.module.css";
 
 const MovieDescription = (props) => {
-  const [movieDesc, setMovieDesc] = useState([]);
+  const [movieDesc, setMovieDesc] = useState({});
+  const [translatedPlot, setTranslatedPlot] = useState("");
+  const [isTranslating, setIsTranslating] = useState(false);
+
+  // detecta idioma do usuário
+  const userLang = navigator.language.slice(0, 2);
+
+  const translateText = async (text) => {
+    try {
+
+      // se o idioma do usuário for inglês, não precisa traduzir
+      if (userLang === "en") return text;
+
+      const response = await fetch(
+        `https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl=${userLang}&dt=t&q=${encodeURIComponent(text)}`
+      );
+
+      const data = await response.json();
+
+      if (Array.isArray(data?.[0])) {
+        return data[0].map((item) => item?.[0]).join("");
+      }
+
+      return text;
+
+    } catch (error) {
+      console.error("Erro ao traduzir sinopse:", error);
+      return text;
+    }
+  };
 
   useEffect(() => {
-    fetch(`${props.apiUrl}&i=${props.movieID}`)
-      .then((response) => response.json())
-      .then((data) => setMovieDesc(data))
-      .catch((error) => console.error(error));
-  }, []);
+    const loadMovie = async () => {
+      try {
+
+        const response = await fetch(`${props.apiUrl}&i=${props.movieID}`);
+        const data = await response.json();
+
+        setMovieDesc(data);
+
+        if (data?.Plot && data.Plot !== "N/A") {
+
+          setIsTranslating(true);
+
+          const translated = await translateText(data.Plot);
+
+          setTranslatedPlot(translated);
+
+          setIsTranslating(false);
+
+          return;
+        }
+
+        setTranslatedPlot("Sinopse indisponível.");
+
+      } catch (error) {
+
+        console.error(error);
+
+        setTranslatedPlot("Não foi possível carregar a sinopse.");
+      }
+    };
+
+    loadMovie();
+  }, [props.apiUrl, props.movieID]);
 
   return (
     <div className={styles.modalBackdrop} onClick={props.click}>
@@ -26,27 +83,35 @@ const MovieDescription = (props) => {
               <img src="/favicon.png" alt="" />
               {movieDesc.Type}
               <h1>{movieDesc.Title}</h1>
+
               <a
                 href={`https://google.com/search?q=${encodeURIComponent(movieDesc.Title)}`}
                 target="_blank"
+                rel="noreferrer"
               >
-                ?? Assistir
+                ▶️ Assistir
               </a>
             </div>
           </div>
         </div>
+
         <div className={styles.containerMisc}>
           <div className={styles.containerFlex}>
             Avaliação: {movieDesc.imdbRating} | Duração: {movieDesc.Runtime} |{" "}
             {movieDesc.Released}
           </div>
+
           <div className={styles.containerFlex}>
             <p>Elenco: {movieDesc.Actors}</p>
             <p>Gênero: {movieDesc.Genre}</p>
           </div>
         </div>
+
         <div className={styles.desc}>
-          <p>Sinopse: {movieDesc.Plot}</p>
+          <p>
+            Sinopse:{" "}
+            {isTranslating ? "Traduzindo..." : translatedPlot || movieDesc.Plot}
+          </p>
         </div>
       </div>
     </div>
