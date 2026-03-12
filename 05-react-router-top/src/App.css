@@ -1,0 +1,38 @@
+.container{
+  max-width: 900px;
+  display: flex;
+  gap: 20px;
+}
+
+.container a{
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-right: 1px solid #555;
+}
+
+.container a:last-child{
+  border-right: none;
+}
+
+.container a:hover{
+  color: #00bfff;
+}
+
+footer{
+  margin-top: 40px;
+  background: #222;
+  color: white;
+  text-align: center;
+  padding: 15px;
+}
+
+.layout{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.content{
+  flex: 1;
+}
