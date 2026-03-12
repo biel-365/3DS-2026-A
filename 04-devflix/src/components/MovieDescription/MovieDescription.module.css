@@ -118,8 +118,6 @@
   .movieModal {
     width: 550px;
   }
-<<<<<<< HEAD
-=======
 
   .containerMisc {
     flex-direction: column;
@@ -132,27 +130,18 @@
     padding: 0 1.5em 2em;
     text-align: left;
   }
->>>>>>> a8e3a72a5875d4527fb78912c28f3b2bdb696ee9
 }
 
 @media screen and (max-width: 430px) {
   .movieModal {
-<<<<<<< HEAD
-    width: 320px;
-=======
     width: min(92vw, 360px);
->>>>>>> a8e3a72a5875d4527fb78912c28f3b2bdb696ee9
     margin-top: 2em;
   }
 
   .desc {
-<<<<<<< HEAD
-    padding-bottom: 3.5em;
-=======
     font-size: 1.1rem;
     line-height: 1.7;
     padding: 0 1.2em 3.5em;
->>>>>>> a8e3a72a5875d4527fb78912c28f3b2bdb696ee9
   }
 }
 
@@ -166,20 +155,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-<<<<<<< HEAD
-  .modalBackdrop {
-    background: rgba(0, 0, 0, 0.4);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
   .movieType {
     background: linear-gradient(rgba(255, 255, 255, 0), #212426);
   }
 }
-=======
-  .movieType {
-    background: linear-gradient(rgba(255, 255, 255, 0), #212426);
-  }
-}
->>>>>>> a8e3a72a5875d4527fb78912c28f3b2bdb696ee9

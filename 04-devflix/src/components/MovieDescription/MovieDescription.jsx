@@ -83,52 +83,33 @@ const MovieDescription = (props) => {
               <img src="/favicon.png" alt="" />
               {movieDesc.Type}
               <h1>{movieDesc.Title}</h1>
-<<<<<<< HEAD
-              <a
-                href={`https://google.com/search?q=${encodeURIComponent(movieDesc.Title)}`}
-                target="_blank"
-=======
 
               <a
                 href={`https://google.com/search?q=${encodeURIComponent(movieDesc.Title)}`}
                 target="_blank"
                 rel="noreferrer"
->>>>>>> a8e3a72a5875d4527fb78912c28f3b2bdb696ee9
               >
                 ▶️ Assistir
               </a>
             </div>
           </div>
         </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> a8e3a72a5875d4527fb78912c28f3b2bdb696ee9
         <div className={styles.containerMisc}>
           <div className={styles.containerFlex}>
             Avaliação: {movieDesc.imdbRating} | Duração: {movieDesc.Runtime} |{" "}
             {movieDesc.Released}
           </div>
-<<<<<<< HEAD
-=======
-
->>>>>>> a8e3a72a5875d4527fb78912c28f3b2bdb696ee9
           <div className={styles.containerFlex}>
             <p>Elenco: {movieDesc.Actors}</p>
             <p>Gênero: {movieDesc.Genre}</p>
           </div>
         </div>
-<<<<<<< HEAD
-        <div className={styles.desc}>
-          <p>Sinopse: {movieDesc.Plot}</p>
-=======
 
         <div className={styles.desc}>
           <p>
             Sinopse:{" "}
             {isTranslating ? "Traduzindo..." : translatedPlot || movieDesc.Plot}
           </p>
->>>>>>> a8e3a72a5875d4527fb78912c28f3b2bdb696ee9
         </div>
       </div>
     </div>
