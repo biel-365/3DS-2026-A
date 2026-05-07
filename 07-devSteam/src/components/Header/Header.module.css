@@ -1,0 +1,53 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+
+  padding: 20px 40px;
+
+  background-color: #171A21;
+  color: white;
+}
+
+.ladoEsquerdo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 70px;
+  height: 70px;
+
+  object-fit: contain;
+}
+
+.titulo {
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.barraPesquisa {
+  width: 300px;
+
+  padding: 10px 15px;
+
+  border: none;
+  border-radius: 8px;
+
+  outline: none;
+
+  background-color: #316282;
+  color: white;
+}
+
+.barraPesquisa::placeholder {
+  color: #c7d5e0;
+}
+
+.Carticon {
+  font-size: 24px;
+  cursor: pointer;
+}
