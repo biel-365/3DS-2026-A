@@ -1,19 +1,19 @@
-import styles from "./Header.module.css"
+import style from "./Header.module.css"
 import Carticon from '@mui/icons-material/ShoppingCart' 
 
 const Header = () => {
   return (
-    <header className={styles.header}>
+    <header className={style.header}>
 
-      <div className={styles.ladoEsquerdo}>
+      <div className={style.ladoEsquerdo}>
 
         <img
           src="/logo.png"
           alt="logo"
-          className={styles.logo}
+          className={style.logo}
         />
 
-        <h1 className={styles.titulo}>
+        <h1 className={style.titulo}>
           DevSteam
         </h1>
 
@@ -22,10 +22,12 @@ const Header = () => {
       <input
         type="text"
         placeholder="Buscar"
-        className={styles.barraPesquisa}
+        className={style.barraPesquisa}
       />
 
-     <Carticon className={styles.Carticon}/>
+    <div className={style.cartIcon}>
+      <Carticon sx={{ fontSize: 45 }} />
+    </div>
 
     </header>
   )

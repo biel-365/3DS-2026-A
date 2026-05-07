@@ -1,0 +1,25 @@
+:root {
+  --background: #1B2838;
+  --header: #171A21;
+  --input: #2A475E;
+  --text: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.gameCardPrincipal {
+  padding: 50px 120px;
+}

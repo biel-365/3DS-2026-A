@@ -1,0 +1,76 @@
+.GameCard {
+  width: 400px;
+  background-color: #2B87AE; 
+  border-radius: 8px;
+  overflow: hidden;
+  font-family: sans-serif;
+  color: white;
+}
+
+.ImgGame {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.Precos {
+  padding: 15px;
+}
+
+.Text16 {
+  font-size: 16px;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+
+.Valores {
+  display: flex;
+  align-items: center;
+  background-color: #344654;
+  margin-bottom: 15px;
+  height: 55px;
+}
+
+.Desconto {
+  background-color: #549300;
+  color: #C9FF00; /* Verde limão */
+  height: 100%;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.Preco {
+  flex: 1;
+  text-align: right;
+  padding-right: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  color: #BEEB14; /* Cor amarela do preço final */
+  line-height: 1.2;
+}
+
+.PrecoOriginal {
+  text-decoration: line-through;
+  color: #8FA1AB;
+  font-size: 11px;
+}
+
+.AddCart {
+  width: 100%;
+  padding: 12px;
+  background-color: #549300;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.AddCart:hover {
+  background-color: #72C100;
+}

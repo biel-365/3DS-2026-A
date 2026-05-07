@@ -41,13 +41,14 @@
 
   background-color: #316282;
   color: white;
+  
 }
 
 .barraPesquisa::placeholder {
   color: #c7d5e0;
 }
 
-.Carticon {
-  font-size: 24px;
+.cartIcon {
+  color: white;
   cursor: pointer;
 }
