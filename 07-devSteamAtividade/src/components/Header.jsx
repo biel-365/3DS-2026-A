@@ -10,23 +10,26 @@ const Header = (props) => {
   }, []);
 
   return (
-    <header className="pt-4 px-3 w-100 navbar navbar-dark bg-dark justify-content-between align-items-center flex-wrap gap-3">
-      <div id="info" className="d-flex gap-5 w-50 justify-content-between">
-        <div id="logo" role="button" className="d-flex align-items-center me-5">
+    <header className="pt-3 px-3 navbar navbar-dark bg-dark d-flex flex-wrap justify-content-between align-items-center">
+      <div
+        id="info"
+        className="d-flex align-items-center gap-3 gap-md-5 flex-grow-1"
+      >
+        <div id="logo" role="button" className="d-flex align-items-center">
           <i className="bi bi-controller fs-1 text-light me-3"></i>
           <span className="navbar-brand fw-bold fs-3">DevSteam</span>
         </div>
 
         <input
           type="text"
-          className="w-100 d-none d-md-block border-0 rounded-1 buscar px-4 my-2 ms-5"
+          className="w-100 w-md-auto border-0 rounded-1 buscar px-4 my-2"
           placeholder="Buscar..."
         />
       </div>
 
-      <div id="carrinho" className="d-flex align-items-center gap-3">
+      <div id="carrinho" className="d-flex align-items-center gap-3 ms-3">
         {usuario ? (
-          <span className="d-flex align-items-center gap-2 me-0 me-md-5">
+          <span className="d-flex align-items-center gap-2">
             <span className="d-none d-md-block">
               Olá, {usuario.nome.split(" ")[0]}!{" "}
             </span>

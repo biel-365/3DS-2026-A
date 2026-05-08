@@ -46,19 +46,19 @@ const CarrinhoOffCanvas = (props) => {
               {props.carrinhoItem.map((item) => (
                 <li
                   key={item.id}
-                  className="px-4 py-3 shadow mt-3 d-flex gap-3 rounded "
+                  className="px-3 px-md-4 py-3 shadow mt-3 d-flex gap-3 rounded flex-column flex-sm-row"
                   style={{ background: "#d9d9d9" }}
                 >
                   <img
                     className="object-fit-cover rounded-2"
                     src={item.imagem}
                     alt={item.titulo}
-                    width={60}
-                    height={80}
+                    width={70}
+                    height={90}
                   />
                   <div className="w-100">
-                    <div className="d-flex justify-content-between">
-                      <h6 className="fw-bold p-1">{item.titulo}</h6>
+                    <div className="d-flex justify-content-between align-items-start gap-2">
+                      <h6 className="fw-bold p-1 text-break">{item.titulo}</h6>
                       <i
                         role="button"
                         className="bi bi-trash fs-5 text-danger"
@@ -66,8 +66,8 @@ const CarrinhoOffCanvas = (props) => {
                       ></i>
                     </div>
 
-                    <div className="d-flex justify-content-between">
-                      <div className="border border-dark-subtle border-1 d-flex align-items-center rounded-4 gap-2">
+                    <div className="d-flex justify-content-between align-items-center mt-2 gap-2 flex-wrap">
+                      <div className="border border-dark-subtle border-1 d-flex align-items-center justify-content-center rounded-4 gap-2 py-1 px-1">
                         <button
                           className="btn border-0"
                           disabled={item.quantidade === 1}
@@ -105,13 +105,13 @@ const CarrinhoOffCanvas = (props) => {
             </ul>
 
             <hr className="text-white" />
-            <div className="d-flex justify-content-between text-light fs-4">
+            <div className="d-flex justify-content-between align-items-center text-light fs-5 fs-md-4">
               <strong>Total:</strong>
               <strong>{formatarMoeda(total)}</strong>
             </div>
             <button
               id="addCarrinho"
-              className="btn btn-success desconto text-light border-0 w-100 mt-2 fs-5"
+              className="btn btn-success desconto text-light border-0 w-100 mt-3 py-2 fs-5 fw-bold"
               data-bs-toggle="offcanvas"
               data-bs-target="#carrinhoOffCanvas"
               onClick={goToCheckout}

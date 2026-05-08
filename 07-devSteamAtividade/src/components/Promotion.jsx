@@ -117,7 +117,7 @@ const Promotion = (props) => {
       </h2>
       <div
         id="itensPromo"
-        className="d-flex flex-wrap gap-4 justify-content-center"
+        className="d-flex flex-wrap gap-4 justify-content-around"
       >
         {/* mapeando um array com react */}
         {aleatorio.map((jogo) => (
