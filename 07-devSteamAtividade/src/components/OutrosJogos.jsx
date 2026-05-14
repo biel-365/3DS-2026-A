@@ -1,5 +1,5 @@
 import React from "react";
-import GameCard from "./GameCard";
+import GameCard from "./GameCardSegundario/GameCardSegundario"; 
 
 const OutrosJogos = () => {
   const games = React.useMemo(
@@ -7,7 +7,7 @@ const OutrosJogos = () => {
       {
         id: 1,
         titulo: "Counter-Strike 2",
-        preco: 0.0,
+        preco: 80.9,
         desconto: 0,
         imagem:
           "https://cdn.cloudflare.steamstatic.com/steam/apps/730/header.jpg",
@@ -103,7 +103,15 @@ const OutrosJogos = () => {
       </h2>
       <div id="itensJogos" className="d-flex flex-column gap-4 ms-md-5 ps-md-3">
         {games.map((item) => (
-          <GameCard key={item.id} id={item.id} />
+          <GameCard 
+          key={item.id} 
+          id={item.id}
+          titulo={item.titulo}
+          preco={item.preco}
+          desconto={item.desconto}
+          imagem={item.imagem}
+          descricao={item.descricao}
+          categoria={item.categoria} />
         ))}
       </div>
     </div>

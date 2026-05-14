@@ -16,8 +16,8 @@ const Login = () => {
   };
 
   return (
-    <div className="container py-5">
-      <div className="row justify-content-center">
+    <div className="container vh-100 d-flex justify-content-center align-items-center">
+      <div className="row justify-content-center w-100">
         <div className="col-12 col-md-8 col-lg-5">
           <form onSubmit={handleLogin}>
             <div className="mb-3">
